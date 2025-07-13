@@ -1,0 +1,175 @@
+aula_virtual/
+├── config/
+│   ├── database.php          # Conexión a la base de datos
+│   └── config.php            # Configuraciones generales
+├── includes/
+│   ├── header.php            # Header común
+│   ├── footer.php            # Footer común
+│   ├── navbar.php            # Barra de navegación
+│   └── functions.php         # Funciones auxiliares
+├── assets/
+│   ├── css/
+│   │   ├── bootstrap.min.css
+│   │   ├── style.css         # Estilos personalizados
+│   │   └── admin.css         # Estilos para panel admin
+│   ├── js/
+│   │   ├── bootstrap.min.js
+│   │   ├── jquery.min.js
+│   │   └── main.js           # JavaScript personalizado
+│   └── images/
+│       ├── logo.png
+│       └── avatars/          # Fotos de usuarios
+├── uploads/
+│   ├── materials/            # Materiales de curso
+│   ├── assignments/          # Tareas subidas
+│   └── profile_pics/         # Fotos de perfil
+├── admin/
+│   ├── index.php             # Dashboard administrativo
+│   ├── manage_users.php      # Gestión de usuarios
+│   ├── manage_courses.php    # Gestión de cursos
+│   ├── manage_students.php   # Gestión de estudiantes
+│   ├── manage_teachers.php   # Gestión de docentes
+│   ├── reports.php           # Reportes y estadísticas
+│   ├── backup.php            # Backup de la base de datos
+│   └── settings.php          # Configuraciones del sistema
+├── director/
+│   ├── dashboard.php         # Panel directivo
+│   ├── academic_reports.php  # Reportes académicos
+│   ├── teacher_evaluation.php # Evaluación docente
+│   ├── student_reports.php   # Reportes estudiantiles
+│   ├── institutional_stats.php # Estadísticas institucionales
+│   └── approvals.php         # Aprobaciones pendientes
+├── jefe_laboratorio/
+│   ├── dashboard.php         # Panel jefe laboratorio
+│   ├── equipment_management.php # Gestión de equipos
+│   ├── lab_schedule.php      # Horarios de laboratorio
+│   ├── safety_protocols.php  # Protocolos de seguridad
+│   ├── maintenance.php       # Mantenimiento de equipos
+│   └── lab_reports.php       # Reportes de laboratorio
+├── coordinador_ciencias/
+│   ├── dashboard.php         # Panel coordinador CS
+│   ├── curriculum_management.php # Gestión curricular
+│   ├── teacher_coordination.php # Coordinación docente
+│   ├── area_reports.php      # Reportes del área
+│   └── resources.php         # Recursos del área
+├── coordinador_letras/
+│   ├── dashboard.php         # Panel coordinador letras
+│   ├── curriculum_management.php # Gestión curricular
+│   ├── teacher_coordination.php # Coordinación docente
+│   ├── area_reports.php      # Reportes del área
+│   └── resources.php         # Recursos del área
+├── coordinador_tutoria/
+│   ├── dashboard.php         # Panel coordinador tutoría
+│   ├── student_guidance.php  # Orientación estudiantil
+│   ├── tutoring_schedule.php # Horarios de tutoría
+│   ├── counseling_reports.php # Reportes de consejería
+│   └── student_support.php   # Apoyo estudiantil
+├── teacher/
+│   ├── dashboard.php         # Panel docente
+│   ├── my_courses.php        # Cursos del docente
+│   ├── create_course.php     # Crear nuevo curso
+│   ├── edit_course.php       # Editar curso existente
+│   ├── manage_students.php   # Gestión de estudiantes del curso
+│   ├── assignments.php       # Gestión de tareas
+│   ├── create_assignment.php # Crear nueva tarea
+│   ├── grade_assignments.php # Calificar tareas
+│   ├── grades.php            # Registro de calificaciones
+│   ├── attendance.php        # Registro de asistencia
+│   ├── materials.php         # Materiales del curso
+│   ├── upload_material.php   # Subir material
+│   └── reports.php           # Reportes del docente
+├── docente_daip/
+│   ├── dashboard.php         # Panel docente DAIP
+│   ├── digital_resources.php # Recursos digitales
+│   ├── innovation_projects.php # Proyectos de innovación
+│   ├── technology_training.php # Capacitación tecnológica
+│   └── daip_reports.php      # Reportes DAIP
+├── student/
+│   ├── dashboard.php         # Panel estudiantil
+│   ├── my_courses.php        # Cursos del estudiante
+│   ├── course_detail.php     # Detalles del curso
+│   ├── assignments.php       # Tareas del estudiante
+│   ├── submit_assignment.php # Enviar tarea
+│   ├── grades.php            # Ver calificaciones
+│   ├── attendance.php        # Ver asistencia
+│   ├── materials.php         # Materiales disponibles
+│   ├── profile.php           # Perfil del estudiante
+│   └── notifications.php     # Notificaciones
+├── auxiliar_educacion/
+│   ├── dashboard.php         # Panel auxiliar educación
+│   ├── student_support.php   # Apoyo estudiantil
+│   ├── discipline.php        # Disciplina escolar
+│   ├── attendance_support.php # Apoyo en asistencia
+│   └── basic_admin.php       # Administración básica
+├── secretaria/
+│   ├── dashboard.php         # Panel secretaria
+│   ├── enrollment.php        # Matrículas
+│   ├── certificates.php      # Certificados
+│   ├── documents.php         # Documentos
+│   └── admin_tasks.php       # Tareas administrativas
+├── auxiliar_laboratorio/
+│   ├── dashboard.php         # Panel auxiliar laboratorio
+│   ├── equipment_support.php # Apoyo en equipos
+│   ├── maintenance_support.php # Apoyo en mantenimiento
+│   └── safety_support.php    # Apoyo en seguridad
+├── auxiliar_biblioteca/
+│   ├── dashboard.php         # Panel auxiliar biblioteca
+│   ├── book_management.php   # Gestión de libros
+│   ├── lending.php           # Préstamos
+│   ├── cataloging.php        # Catalogación
+│   └── reading_promotion.php # Promoción de lectura
+├── personal_administrativo/
+│   ├── dashboard.php         # Panel personal admin
+│   ├── documentation.php     # Documentación
+│   ├── general_admin.php     # Administración general
+│   └── admin_support.php     # Apoyo administrativo
+├── personal_vigilancia/
+│   ├── dashboard.php         # Panel vigilancia
+│   ├── security_reports.php  # Reportes de seguridad
+│   ├── access_control.php    # Control de acceso
+│   └── facility_monitoring.php # Monitoreo de instalaciones
+├── psicologa/
+│   ├── dashboard.php         # Panel psicóloga
+│   ├── student_evaluation.php # Evaluación estudiantil
+│   ├── counseling.php        # Consejería
+│   ├── mental_health.php     # Salud mental
+│   ├── psychology_reports.php # Reportes psicológicos
+│   └── interventions.php     # Intervenciones
+├── cist/
+│   ├── dashboard.php         # Panel CIST
+│   ├── system_support.php    # Soporte del sistema
+│   ├── innovation.php        # Innovación
+│   ├── digital_training.php  # Capacitación digital
+│   └── tech_reports.php      # Reportes tecnológicos
+├── auth/
+│   ├── login.php             # Página de login
+│   ├── logout.php            # Cerrar sesión
+│   ├── register.php          # Registro (opcional)
+│   ├── forgot_password.php   # Recuperar contraseña
+│   └── reset_password.php    # Restablecer contraseña
+├── api/
+│   ├── login_process.php     # Procesar login
+│   ├── upload_file.php       # Subir archivos
+│   ├── submit_assignment.php # Enviar tareas
+│   ├── get_notifications.php # Obtener notificaciones
+│   ├── get_grades.php        # Obtener calificaciones
+│   ├── mark_attendance.php   # Marcar asistencia
+│   └── send_message.php      # Enviar mensajes
+├── database/
+│   ├── schema.sql            # Estructura de la base de datos
+│   ├── seed_data.sql         # Datos iniciales
+│   └── migrations/           # Migraciones de la BD
+├── reports/
+│   ├── student_report.php    # Reporte individual estudiante
+│   ├── class_report.php      # Reporte de clase
+│   ├── teacher_report.php    # Reporte de docente
+│   └── institutional_report.php # Reporte institucional
+├── backup/
+│   └── backups/              # Respaldos de la BD
+├── logs/
+│   ├── system.log            # Log del sistema
+│   ├── access.log            # Log de accesos
+│   └── error.log             # Log de errores
+├── index.php                 # Página principal
+├── .htaccess                 # Configuraciones de Apache
+└── README.md                 # Documentación del proyecto

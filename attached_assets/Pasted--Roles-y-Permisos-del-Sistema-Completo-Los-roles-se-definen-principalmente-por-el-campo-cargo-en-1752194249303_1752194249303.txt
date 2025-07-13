@@ -1,0 +1,419 @@
+👥 Roles y Permisos del Sistema (Completo)
+Los roles se definen principalmente por el campo cargo en la tabla personal. La tabla estudiantes gestiona las cuentas específicas de los estudiantes.
+
+🔴 ADMINISTRADOR (ADMIN)
+
+Acceso: Acceso total al sistema.
+
+Responsabilidades Clave:
+
+Gestión completa de usuarios (crear, editar, eliminar).
+
+Gestión de roles y permisos.
+
+Configuración y ajustes del sistema.
+
+Copia de seguridad y restauración de la base de datos.
+
+Monitoreo de logs y actividad del sistema.
+
+Acceso a todos los módulos y reportes completos del sistema.
+
+Implicación de la Base de Datos: Implícito por la capacidad de restablecer contraseñas de estudiantes (sp_resetear_password_estudiante).
+
+🟠 DIRECTOR
+
+Acceso: Gestión académica y administrativa.
+
+Responsabilidades Clave:
+
+Supervisión general de la institución.
+
+Gestión de personal docente.
+
+Aprobación de cursos y programas.
+
+Reportes académicos institucionales.
+
+Evaluación de docentes (tabla evaluaciones_docentes).
+
+Gestión de horarios académicos.
+
+Comunicaciones institucionales.
+
+Supervisión de calificaciones.
+
+Gestión de períodos académicos (tabla anios_academicos, tabla bimestres).
+
+Gestión institucional completa.
+
+Implicación de la Base de Datos: Un cargo en la tabla personal.
+
+🔶 JEFE DE LABORATORIO
+
+Acceso: Gestión de laboratorios y equipos.
+
+Responsabilidades Clave:
+
+Gestión de equipos de laboratorio (tabla laboratorios).
+
+Protocolos de seguridad.
+
+Mantenimiento de equipos.
+
+Horarios de laboratorio.
+
+Reportes de laboratorio.
+
+Gestión de inventario científico.
+
+Supervisión de prácticas.
+
+Implicación de la Base de Datos: Un cargo en la tabla personal, vinculado a las tablas laboratorios y auxiliares_laboratorio.
+
+🟡 COORDINADOR CIENCIAS SOCIALES
+
+Acceso: Coordinación académica específica.
+
+Responsabilidades Clave:
+
+Gestión curricular del área (tabla areas_academicas).
+
+Coordinación de docentes del área.
+
+Reportes del área de ciencias sociales.
+
+Recursos del área.
+
+Supervisión académica específica y planificación curricular.
+
+Implicación de la Base de Datos: Un cargo en la tabla personal (COORD_CIENCIAS), vinculado a las tablas areas_academicas y coordinaciones.
+
+🟡 COORDINADOR LETRAS
+
+Acceso: Coordinación académica específica.
+
+Responsabilidades Clave:
+
+Gestión curricular del área (tabla areas_academicas).
+
+Coordinación de docentes del área.
+
+Reportes del área de letras.
+
+Recursos del área.
+
+Supervisión académica específica y planificación curricular.
+
+Implicación de la Base de Datos: Un cargo en la tabla personal (COORD_LETRAS), vinculado a las tablas areas_academicas y coordinaciones.
+
+🟡 COORDINADOR TUTORÍA
+
+Acceso: Coordinación de tutoría y orientación.
+
+Responsabilidades Clave:
+
+Orientación estudiantil.
+
+Horarios de tutoría.
+
+Reportes de consejería.
+
+Apoyo estudiantil.
+
+Seguimiento de estudiantes.
+
+Coordinación con psicología (tabla asignacion_tutoria, procedimiento sp_asignar_tutor).
+
+Implicación de la Base de Datos: Un cargo en la tabla personal (COORD_TUTORIA).
+
+🔵 DOCENTE
+
+Acceso: Gestión académica de cursos.
+
+Responsabilidades Clave:
+
+Crear y gestionar cursos asignados (tabla cursos, tabla asignaciones).
+
+Subir materiales educativos (tabla materiales_curso).
+
+Crear y calificar tareas (tabla tareas, tabla notas, procedimiento sp_registrar_nota).
+
+Registro de asistencia (tabla asistencias).
+
+Ingreso de calificaciones (tabla notas).
+
+Comunicación con estudiantes.
+
+Reportes de sus cursos.
+
+Gestión de estudiantes en sus cursos.
+
+Programación de evaluaciones.
+
+Implicación de la Base de Datos: Un cargo en la tabla personal (DOCENTE).
+
+🔵 DOCENTE DAIP
+
+Acceso: Gestión de aula de innovación.
+
+Responsabilidades Clave:
+
+Recursos digitales.
+
+Proyectos de innovación.
+
+Capacitación tecnológica.
+
+Reportes DAIP.
+
+Gestión de tecnología educativa.
+
+Soporte tecnológico pedagógico.
+
+Implicación de la Base de Datos: Aunque no es un valor de cargo distinto en la enumeración de la tabla personal, esta es funcionalmente un rol de DOCENTE especializado (DOCENTE cargo en personal) con responsabilidades adicionales y módulos dedicados.
+
+🟢 ESTUDIANTE
+
+Acceso: Acceso a contenido académico.
+
+Responsabilidades Clave:
+
+Ver cursos inscritos (tabla matriculas).
+
+Descargar materiales del curso.
+
+Enviar tareas y trabajos (tabla tareas).
+
+Ver calificaciones propias (tabla notas, función fn_calcular_promedio).
+
+Ver asistencia propia (tabla asistencias).
+
+Comunicación con docentes.
+
+Actualizar perfil personal.
+
+Recibir notificaciones.
+
+Ver horarios de clase.
+
+Implicación de la Base de Datos: Una tabla estudiantes distinta con procedimientos dedicados de gestión de inicio de sesión y contraseña (sp_cambiar_password_estudiante, sp_establecer_password_inicial, sp_resetear_password_estudiante, sp_validar_login_estudiante).
+
+🟤 AUXILIAR DE EDUCACIÓN
+
+Acceso: Apoyo educativo y disciplinario.
+
+Responsabilidades Clave:
+
+Apoyo estudiantil.
+
+Disciplina escolar.
+
+Apoyo en asistencia.
+
+Administración básica.
+
+Supervisión de estudiantes.
+
+Comunicación con padres.
+
+Implicación de la Base de Datos: Un cargo en la tabla personal (AUXILIAR_EDUCACION), con una tabla auxiliares_educacion dedicada.
+
+🟣 SECRETARIA
+
+Acceso: Gestión administrativa.
+
+Responsabilidades Clave:
+
+Matrículas (tabla matriculas, procedimiento sp_matricular_estudiante).
+
+Emisión de certificados.
+
+Gestión de documentos (tabla solicitudes_documentos).
+
+Tareas administrativas.
+
+Registro de datos estudiantiles.
+
+Comunicaciones administrativas.
+
+Reportes administrativos.
+
+Implicación de la Base de Datos: Un cargo en la tabla personal (SECRETARIA), con una tabla asignaciones_secretaria dedicada.
+
+🟤 AUXILIAR DE LABORATORIO
+
+Acceso: Apoyo en laboratorio.
+
+Responsabilidades Clave:
+
+Apoyo en equipos.
+
+Apoyo en mantenimiento.
+
+Apoyo en seguridad.
+
+Inventario básico.
+
+Preparación de prácticas.
+
+Implicación de la Base de Datos: Un cargo en la tabla personal (AUXILIAR_LABORATORIO), con una tabla auxiliares_laboratorio dedicada.
+
+🟤 AUXILIAR DE BIBLIOTECA
+
+Acceso: Gestión bibliotecaria.
+
+Responsabilidades Clave:
+
+Gestión de libros (tabla libros).
+
+Préstamos bibliográficos (tabla prestamos_libros).
+
+Catalogación.
+
+Promoción de lectura.
+
+Inventario bibliográfico.
+
+Atención a usuarios.
+
+Implicación de la Base de Datos: Un cargo en la tabla personal (AUXILIAR_BIBLIOTECA).
+
+🟤 PERSONAL ADMINISTRATIVO
+
+Acceso: Apoyo administrativo general.
+
+Responsabilidades Clave:
+
+Documentación general.
+
+Administración general.
+
+Apoyo administrativo.
+
+Gestión de archivos.
+
+Comunicaciones internas.
+
+Implicación de la Base de Datos: Un cargo en la tabla personal (ADMINISTRATIVO).
+
+🟤 PERSONAL DE VIGILANCIA
+
+Acceso: Seguridad y control.
+
+Responsabilidades Clave:
+
+Reportes de seguridad.
+
+Control de acceso.
+
+Monitoreo de instalaciones.
+
+Gestión de incidentes.
+
+Registro de visitas.
+
+Implicación de la Base de Datos: Un cargo en la tabla personal (VIGILANCIA).
+
+🟣 PSICÓLOGA
+
+Acceso: Apoyo psicológico y orientación.
+
+Responsabilidades Clave:
+
+Evaluación estudiantil.
+
+Consejería psicológica.
+
+Salud mental.
+
+Reportes psicológicos (tabla atencion_psicologica, tabla seguimiento_psicologico, procedimiento sp_registrar_atencion_psicologica).
+
+Intervenciones especializadas.
+
+Coordinación con tutoría.
+
+Apoyo a docentes.
+
+Implicación de la Base de Datos: Un cargo en la tabla personal (PSICOLOGO).
+
+🔷 CIST (Coordinador de Innovación y Soporte Tecnológico)
+
+Acceso: Gestión tecnológica e innovación.
+
+Responsabilidades Clave:
+
+Soporte del sistema.
+
+Innovación tecnológica.
+
+Capacitación digital.
+
+Reportes tecnológicos.
+
+Gestión de equipos informáticos.
+
+Mantenimiento de sistemas.
+
+Desarrollo de soluciones.
+
+Implicación de la Base de Datos: Un cargo en la tabla personal (CIST).
+
+📊 Estructura de Acceso por Módulos
+Esta sección detalla qué roles tienen acceso a los diversos módulos dentro del sistema.
+
+🔴 MÓDULO DE ADMINISTRACIÓN
+
+Usuarios: ADMIN, DIRECTOR, SECRETARIA, CIST
+
+Configuración: ADMIN, CIST
+
+Logs: ADMIN, CIST
+
+Backup: ADMIN, CIST
+
+🔵 MÓDULO ACADÉMICO
+
+Cursos: ADMIN, DIRECTOR, COORDINADORES, DOCENTES
+
+Calificaciones: ADMIN, DIRECTOR, COORDINADORES, DOCENTES
+
+Tareas: ADMIN, DIRECTOR, COORDINADORES, DOCENTES, ESTUDIANTES
+
+Materiales: ADMIN, DIRECTOR, COORDINADORES, DOCENTES, ESTUDIANTES, AUX_BIBLIOTECA
+
+🟢 MÓDULO ESTUDIANTIL
+
+Perfil: ESTUDIANTE, DOCENTES, COORDINADORES
+
+Progreso: ESTUDIANTE, DOCENTES, COORDINADORES, PSICÓLOGA
+
+Comunicaciones: ESTUDIANTE, DOCENTES, COORDINADORES
+
+🟡 MÓDULO DE REPORTES
+
+Institucionales: ADMIN, DIRECTOR, SECRETARIA
+
+Académicos: ADMIN, DIRECTOR, COORDINADORES
+
+Individuales: DOCENTES, ESTUDIANTES, PSICÓLOGA
+
+Administrativos: ADMIN, DIRECTOR, SECRETARIA, PERSONAL_ADM
+
+🟤 MÓDULO TÉCNICO
+
+Laboratorio: ADMIN, DIRECTOR, JEFE_LAB, AUX_LAB
+
+Biblioteca: ADMIN, DIRECTOR, AUX_BIB
+
+Tecnología: ADMIN, CIST, DOCENTE_DAIP
+
+Seguridad: ADMIN, DIRECTOR, PERSONAL_VIGILANCIA
+
+🟣 MÓDULO DE BIENESTAR
+
+Psicología: ADMIN, DIRECTOR, PSICÓLOGA, COORD_TUTORIA
+
+Tutoría: ADMIN, DIRECTOR, COORD_TUTORIA, DOCENTES
+
+Disciplina: ADMIN, DIRECTOR, AUX_EDUCACION
